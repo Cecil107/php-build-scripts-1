@@ -1,5 +1,5 @@
 #!/bin/bash
-# ImagicalMine Installation Script for Linux64(master)
+# ImagicalMine Installation Script for MacOS and Linux(master)
 #  _    _            _    _______ 
 # | |  | |    /\    | |  |__   __|
 # | |__| |   /  \   | |     | |   
