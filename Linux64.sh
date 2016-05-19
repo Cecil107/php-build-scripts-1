@@ -30,21 +30,13 @@ echo "system> Welcome to ImagicalMine!"
 echo "system> This installer will guide you through installing ImagicalMine for your server!"
 echo
 echo "system> Select which PHP binary you want to install:"
-echo "system>   6) Linux x86(32-bit)"
-echo "system>   2) Linux x64(64-bit)"
-echo "system>   6) Mac x86(32-bit)"
-echo "system>   6) Mac x64(64-bit)"
-echo "system>   6) Raspberry Pi 2"
-echo "system>   6) Exit ImagicalMine installation"
+echo "system>   1) Linux x64(64-bit)"
+echo "system>   2) Exit ImagicalMine installation"
 read -e -p "system> Number (e.g. 1): " a
 read -e -p "system> Number (e.g. 1): " a </dev/tty
  case "$a" in 
-	1 ) z="PHP_7.0.2_x86_Linux.tar.gz";;
-	2 ) z="PHP_7.0.2_x86-64_Linux.tar.gz";;
-        3 ) z="PHP_7.0.2_x86_MacOS.tar.gz";;
-        4 ) z="PHP_7.0.2_x86-64_MacOS.tar.gz";;
-        5 ) z="RPI2";;
-        6 ) exit 1;;
+	1 ) z="PHP_7.0.2_x86-64_Linux.tar.gz";;
+        2 ) exit 1;;
         * ) echo "error> An unexpected error occurred - either a 10 second timeout or an unknown selection. Restart the script, and then choose again."; exit 1;;
  esac
 
