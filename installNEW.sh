@@ -1,5 +1,5 @@
 #!/bin/bash
-# ImagicalMine Installation Script for Mac OS X and Linux(master)
+# ImagicalMine Installation Script for Linux64(master)
 #  _    _            _    _______ 
 # | |  | |    /\    | |  |__   __|
 # | |__| |   /  \   | |     | |   
@@ -31,12 +31,14 @@ echo "system> This installer will guide you through installing ImagicalMine for 
 echo
 echo "system> Select which PHP binary you want to install:"
 echo "system>   1) Linux x64(64-bit)"
-echo "system>   2) Exit ImagicalMine installation"
+echo "system>   2) MacOS x64(64-bit)"
+echo "system>   3) Exit ImagicalMine installation"
 read -e -p "system> Number (e.g. 1): " a
 read -e -p "system> Number (e.g. 1): " a </dev/tty
  case "$a" in 
 	1 ) z="PHP_7.0.2_x86-64_Linux.tar.gz";;
-        2 ) exit 1;;
+	2 ) z="PHP_7.0.2_x86-64_MacOS.tar.gz";;
+	3 ) exit 1;;
         * ) echo "error> An unexpected error occurred - either a 10 second timeout or an unknown selection. Restart the script, and then choose again."; exit 1;;
  esac
 
@@ -78,6 +80,16 @@ wget https://dl.bintray.com/pocketmine/PocketMine/PHP_7.0.3_x86-64_Linux.tar.gz 
 	rm -r PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
 else
 wget https://dl.bintray.com/pocketmine/PocketMine/PHP_7.0.3_x86-64_Linux.tar.gz >>./$wp 2>>./$wp
+	chmod 777 PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+	tar zxvf PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+	rm -r PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+if [ "$z" == "PHP_7.0.2_x86-64_MacOS.tar.gz" ];then
+wget https://dl.bintray.com/pocketmine/PocketMine/PHP_7.0.3_x86-64_MacOS.tar.gz >>./$wp 2>>./$wp
+	chmod 777 PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+	tar zxvf PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+	rm -r PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
+else
+wget https://dl.bintray.com/pocketmine/PocketMine/PHP_7.0.3_x86-64_MacOS.tar.gz >>./$wp 2>>./$wp
 	chmod 777 PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
 	tar zxvf PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
 	rm -r PHP_7.0.3_x86-64_Linux.tar.gz >>./$lp 2>>./$lpe
